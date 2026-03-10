@@ -7,3 +7,18 @@
     { "source": "/health",            "destination": "/api/health" }
   ]
 }
+```
+
+But actually — **stop fighting with Vercel**. The **Supabase Edge Function is already fully working right now** and is the better option (faster, closer to your DB, no cold starts). 
+
+Point your Biomax device to this instead:
+
+| Setting | Value |
+|---|---|
+| **Server IP** | `kvmzcuzohdzzjbkfyrav.supabase.co` |
+| **Server Port** | `443` |
+| **Path** | `/functions/v1/biomax-listener` |
+
+Test it right now by visiting:
+```
+https://kvmzcuzohdzzjbkfyrav.supabase.co/functions/v1/biomax-listener/health
